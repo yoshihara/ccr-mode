@@ -6,7 +6,7 @@ Major mode for editing Commit Comment Report.
 
 This is for [commit-comment-service](http://www.clear-code.com/services/commit-comment.html).
 
-## Settings
+## Setting
 
 put below configuration to your .emacs or init.el.
 
