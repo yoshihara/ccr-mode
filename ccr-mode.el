@@ -26,7 +26,7 @@
   (interactive)
   (save-excursion
     (beginning-of-line)
-    (when (re-search-forward "\\([-a-z0-9A-Z/\._]+?\\):\\([a-z0-9A-Z]+\\)" nil t nil)
+    (when (re-search-forward "\\([-a-z0-9A-Z/\._]+?\\)@\\([a-z0-9A-Z]+\\)" nil t nil)
       (let ((repository (match-string 1))
             (commit-hash (match-string 2)))
         (if (string-match "/" repository)
