@@ -65,4 +65,4 @@
   (interactive)
   (commit-comment-report-mode))
 
-(provide 'commit-comment-report-mode)
+(provide 'ccr-mode)
