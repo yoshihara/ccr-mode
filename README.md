@@ -17,6 +17,6 @@ put below configuration to your .emacs or init.el.
 
 * In a report file, ```M-x ccr-mode RET```.
 
-* After below:
+* After above:
   * Insert date (YYYY-MM-DD:%:): ```C-c d```
   * Open commit page (in GitHub only) with your browser: ```C-c o```
