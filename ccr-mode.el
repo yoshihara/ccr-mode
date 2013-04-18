@@ -28,9 +28,9 @@
     (beginning-of-line)
     (when (re-search-forward "\\([-a-z0-9A-Z/\._]+?\\):\\([a-z0-9A-Z]+\\)" nil t nil)
       (let ((repository (match-string 1))
-            (commit-id (match-string 2)))
+            (commit-hash (match-string 2)))
         (if (string-match "/" repository)
-            (browse-url (format "https://github.com/%s/commit/%s" repository commit-id)))))))
+            (browse-url (format "https://github.com/%s/commit/%s" repository commit-hash)))))))
 
 (setq commit-comment-report-mode-font-lock-keywords
       '(("^\\([0-9][0-9][0-9][0-9]-[0-9][0-9]?-[0-9][0-9]?\\):\\([0-9]+%\\):?$"
