@@ -12,9 +12,14 @@
   '((t (:foreground "violet" :underline t)))
   nil)
 
+(defface commit-comment-report-other-commit-face
+  '((t (:foreground "violet")))
+  nil)
+
 (defvar date-face          'commit-comment-report-date-face)
 (defvar percent-face       'commit-comment-report-percent-face)
 (defvar github-commit-face 'commit-comment-report-github-commit-face)
+(defvar other-commit-face  'commit-comment-report-other-commit-face)
 
 (setq commit-comment-report-date-format "%Y-%m-%d:%:")
 (defun commit-comment-report-insert-date ()
@@ -35,8 +40,10 @@
 (setq commit-comment-report-mode-font-lock-keywords
       '(("^\\([0-9][0-9][0-9][0-9]-[0-9][0-9]?-[0-9][0-9]?\\):\\([0-9]+%\\):?$"
          (1 date-face nil t) (2 percent-face nil t))
-        ("^  .*?\\([-a-z0-9A-Z/\._]+?@[a-z0-9A-Z]+?\\):" .
-         (1 github-commit-face nil t))))
+        ("^  .*?\\([-a-z0-9A-Z._]+?\/[-a-z0-9A-Z._]+?@[a-z0-9A-Z]+?\\):" .
+         (1 github-commit-face nil t))
+        ("^  .*?\\([-a-z0-9A-Z._]+?@[a-z0-9A-Z]+?\\):" .
+         (1 other-commit-face nil t))))
 
 (defun commit-comment-report-mode ()
   "Major mode for editing Commit Comment Report."
