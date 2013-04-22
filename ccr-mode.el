@@ -38,11 +38,11 @@
             (browse-url (format "https://github.com/%s/commit/%s" repository commit-hash)))))))
 
 (setq commit-comment-report-mode-font-lock-keywords
-      '(("^\\([0-9][0-9][0-9][0-9]-[0-9][0-9]?-[0-9][0-9]?\\):\\([0-9]+%\\):?$"
+      '(("^\\([0-9][0-9][0-9][0-9]-[0-9][0-9]?-[0-9][0-9]?\\):\\([0-9]+\\):?"
          (1 date-face nil t) (2 percent-face nil t))
-        ("^  .*?\\([-a-z0-9A-Z._]+?\/[-a-z0-9A-Z._]+?@[a-z0-9A-Z]+?\\)[: ]?" .
+        ("^  .*?\\([-a-z0-9A-Z._]+?\/[-a-z0-9A-Z._]+?@[a-z0-9A-Z]+\\)[: ]?" .
          (1 github-commit-face nil t))
-        ("^  .*?\\([-a-z0-9A-Z._]+?@[a-z0-9A-Z]+?\\)[: ]?" .
+        ("^  .*?\\([-a-z0-9A-Z._]+?@[a-z0-9A-Z]+\\)[: ]?" .
          (1 other-commit-face nil t))))
 
 (defun commit-comment-report-mode ()
