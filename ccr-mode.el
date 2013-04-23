@@ -6,7 +6,7 @@
 (defface commit-comment-report-none-percentage-face
   '((t (:foreground "Red" :bold t :height 1.35))) nil)
 
-(defface commit-comment-report-percent-face
+(defface commit-comment-report-percentage-face
   '((t (:foreground "DeepSkyBlue1" :bold t))) :height 1.35 nil)
 
 (defface commit-comment-report-github-commit-face
@@ -18,7 +18,7 @@
   nil)
 
 (defvar date-face          'commit-comment-report-date-face)
-(defvar percent-face       'commit-comment-report-percent-face)
+(defvar percentage-face    'commit-comment-report-percentage-face)
 (defvar github-commit-face 'commit-comment-report-github-commit-face)
 (defvar other-commit-face  'commit-comment-report-other-commit-face)
 (defvar none-percentage-face
@@ -42,7 +42,7 @@
 
 (setq commit-comment-report-mode-font-lock-keywords
       '(("^\\([0-9][0-9][0-9][0-9]-[0-9][0-9]?-[0-9][0-9]?\\):\\([0-9]+%\\):?"
-         (1 date-face nil t) (2 percent-face nil t))
+         (1 date-face nil t) (2 percentage-face nil t))
         ("^\\([0-9][0-9][0-9][0-9]-[0-9][0-9]?-[0-9][0-9]?:%\\):?"
          (1 none-percentage-face nil t))
         ("^  .*?\\([-a-z0-9A-Z._]+?\/[-a-z0-9A-Z._]+?@[a-z0-9A-Z]+\\)[: ]?" .
