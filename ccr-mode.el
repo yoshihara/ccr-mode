@@ -17,12 +17,11 @@
   '((t (:foreground "violet")))
   nil)
 
-(defvar date-face          'commit-comment-report-date-face)
-(defvar percentage-face    'commit-comment-report-percentage-face)
-(defvar github-commit-face 'commit-comment-report-github-commit-face)
-(defvar other-commit-face  'commit-comment-report-other-commit-face)
-(defvar none-percentage-face
-  'commit-comment-report-none-percentage-face)
+(defvar date-face            'commit-comment-report-date-face)
+(defvar percentage-face      'commit-comment-report-percentage-face)
+(defvar github-commit-face   'commit-comment-report-github-commit-face)
+(defvar other-commit-face    'commit-comment-report-other-commit-face)
+(defvar none-percentage-face 'commit-comment-report-none-percentage-face)
 
 (setq commit-comment-report-date-format "%Y-%m-%d:%:")
 (defun commit-comment-report-insert-date ()
