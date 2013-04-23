@@ -4,6 +4,9 @@
   '((t (:foreground "SteelBlue1" :bold t)))
   nil)
 
+(defface commit-comment-report-invalid-percentage-face
+  '((t (:foreground "Red" :bold t :height 1.35))) nil)
+
 (defface commit-comment-report-percent-face
   '((t (:foreground "DeepSkyBlue1" :bold t)))
   nil)
@@ -20,6 +23,8 @@
 (defvar percent-face       'commit-comment-report-percent-face)
 (defvar github-commit-face 'commit-comment-report-github-commit-face)
 (defvar other-commit-face  'commit-comment-report-other-commit-face)
+(defvar invalid-percentage-face
+  'commit-comment-report-invalid-percentage-face)
 
 (setq commit-comment-report-date-format "%Y-%m-%d:%:")
 (defun commit-comment-report-insert-date ()
@@ -40,6 +45,8 @@
 (setq commit-comment-report-mode-font-lock-keywords
       '(("^\\([0-9][0-9][0-9][0-9]-[0-9][0-9]?-[0-9][0-9]?\\):\\([0-9]+%\\):?"
          (1 date-face nil t) (2 percent-face nil t))
+        ("^\\([0-9][0-9][0-9][0-9]-[0-9][0-9]?-[0-9][0-9]?:%\\):?"
+         (1 invalid-percentage-face nil t))
         ("^  .*?\\([-a-z0-9A-Z._]+?\/[-a-z0-9A-Z._]+?@[a-z0-9A-Z]+\\)[: ]?" .
          (1 github-commit-face nil t))
         ("^  .*?\\([-a-z0-9A-Z._]+?@[a-z0-9A-Z]+\\)[: ]?" .
