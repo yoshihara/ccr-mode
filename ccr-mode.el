@@ -1,15 +1,13 @@
 (defvar commit-comment-report-mode-hook nil)
 
 (defface commit-comment-report-date-face
-  '((t (:foreground "SteelBlue1" :bold t)))
-  nil)
+  '((t (:foreground "SteelBlue1" :bold t))) :height 1.35 nil)
 
 (defface commit-comment-report-none-percentage-face
   '((t (:foreground "Red" :bold t :height 1.35))) nil)
 
 (defface commit-comment-report-percent-face
-  '((t (:foreground "DeepSkyBlue1" :bold t)))
-  nil)
+  '((t (:foreground "DeepSkyBlue1" :bold t))) :height 1.35 nil)
 
 (defface commit-comment-report-github-commit-face
   '((t (:foreground "violet" :underline t)))
