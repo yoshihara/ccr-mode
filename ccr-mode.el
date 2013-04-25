@@ -29,7 +29,7 @@
   (insert
    (format-time-string commit-comment-report-date-format (current-time))))
 
-(defun commit-comment-report-open-commit ()
+(defun commit-comment-report-github-url ()
   (interactive)
   (save-excursion
     (beginning-of-line)
@@ -37,7 +37,14 @@
       (let ((repository (match-string 1))
             (commit-hash (match-string 2)))
         (if (string-match "/" repository)
-            (browse-url (format "https://github.com/%s/commit/%s" repository commit-hash)))))))
+            (format "https://github.com/%s/commit/%s" repository commit-hash))))))
+
+(defun commit-comment-report-open-commit ()
+  (interactive)
+  (let ((github-url (commit-comment-report-github-url)))
+    (if (not (null github-url))
+        (browse-url github-url)
+      (message "It may not exist in GitHub!"))))
 
 (setq commit-comment-report-mode-font-lock-keywords
       '(("^\\([0-9][0-9][0-9][0-9]-[0-9][0-9]?-[0-9][0-9]?\\):\\([0-9]+%\\):?"
